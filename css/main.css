@@ -150,6 +150,66 @@ div {
     display: block;
 }
 
+
+.nameTag {
+    font-size: 20px;
+    font-weight: bold;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 72px;
+}
+
+#searchbar {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    width:500px;
+    height: 2.5em;
+
+}
+
+#searchbarbox {
+    margin-top: 30px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    max-width: 500px;
+    position: absolute;
+}
+
+.GroupBlock {
+    margin-top: 30px;
+    left: 0px;
+    margin-left: 20px;
+}
+
+.mygroup {
+    font-size: 26px;
+    width: 250px;;
+}
+
+.mygroup a:visited {
+    color: inherit;
+}
+.mygroup a {
+    color: inherit;
+}
+
+.course {
+    font-size: 22px;
+    width: 200px;
+    margin-left: 15px;
+    border-bottom: solid 2px lightgrey;
+    font-weight: 100;
+}
+
+.course:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.courses {
+    margin-bottom: 20px;
+}
+
 .logo {
     width: 213px;
     height: 36px;
@@ -165,6 +225,12 @@ div {
     background-color: rgba(250, 250, 250, 0.8);
     clear: both;
     border-right: solid lightgrey;
+
+}
+
+.leftbar {
+    border-right: 1px solid lightgrey;
+    background-color: rgba(250, 250, 250, 0.8);
 
 }
 
@@ -187,8 +253,12 @@ div {
     margin-top: 125px;
     margin-left: 35px;
 }
-.headshot {
 
+.headshot {
+    display: inline-block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
     border-radius: 25px;
 }
 
@@ -271,3 +341,7 @@ div {
     padding-left: 1em;
 }
 
+.checkbox {
+    width: 30px;
+    margin-right: 10px;
+}
