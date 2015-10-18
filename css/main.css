@@ -197,11 +197,8 @@ div {
 }
 
 .upcoming {
-    oveflow: hidden;
-}
-
-.upcoming h1{
-    color: green;
+    overflow: hidden;
+    margin-bottom: 1em;
 }
 
 .homework-item, .test-item {
@@ -224,8 +221,31 @@ div {
 
 .discussions {
     clear: both;
+    margin-top: 1em;
 }
 
 .center h1 {
+    padding-left: 1em;
+    color: green;
+}
+
+.discussion-item {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: solid 2px lightgray;
+}
+
+.discussion-item img {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+.message-title {
+    clear: both;
+}
+
+.message-body {
+    display: inline;
     padding-left: 1em;
 }
