@@ -1,0 +1,17 @@
+{
+	"people" : {
+		"dummy": {
+			"uni" : "dummy",
+			"firstName" : "dummy",
+			"lastName" : "dummy",
+			"major" : ["dummy"],
+			"year" : 0,
+			"classes" : ["dummy"]
+		}
+	},
+	"schools" : {
+		"dummy" : {
+			"majors" : ["none"]
+		}
+	}
+}

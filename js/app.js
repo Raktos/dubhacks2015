@@ -10,9 +10,7 @@ app.controller("MainCtrl", function($scope) {
 
     var fireBase = new Firebase('https://uni-app.firebaseio.com');
     var peopleFirebase = new Firebase('https://uni-app.firebaseio.com/people');
-    var originalPostFirebase = new Firebase('https://uni-app.firebaseio.com/messages/group/originalPost');
-    var replyPostFirebase = new Firebase('https://uni-app.firebaseio.com/messages/group/replyPost');
-    var personalMessageFirebase = new Firebase('https://uni-app.firebaseio.com/messages/personal');
+    var schoolsFirebase = new Firebase('https://uni-app.firebaseio.com/schools');
 
     // raktos35@gmail.com
     $scope.email = "";
@@ -22,6 +20,8 @@ app.controller("MainCtrl", function($scope) {
     $scope.school = "";
     $scope.year = "";
     $scope.login = false;
+    $scope.major = "";
+    $scope.uid = null;
 
     // perform a get request to authenticate the user
     // will make a get request to using the userEmail and the password
@@ -46,6 +46,7 @@ app.controller("MainCtrl", function($scope) {
                 alert("user creation failed " + error);
             } else {
                 populateNewUser(userData);
+                addUserToSchool($scope.school, $scope.year, userData.uid);
             }
         })
     };
@@ -58,7 +59,16 @@ app.controller("MainCtrl", function($scope) {
         $scope.login()
     }
 
+    $scope.addMajor = function(school, major, year, uid) {
+        peopleFirebase.child(uid).child('majors').push(major);
+        schoolsFirebase.child(school).child('majors').child(major).child('students').push(uid);
+        schoolsFirebase.child(school).child('majors').child(major).child(year).child('students').push(uid);
+    };
 
+    function addUserToSchool(school, year, uid) {
+        schoolsFirebase.child(school).child('students').push(uid);
+        $scope.addMajor(school, 'general', year, uid);
+    }
     
     // needs to load up the news feed data
     // group list data 
@@ -70,16 +80,16 @@ app.controller("MainCtrl", function($scope) {
             $scope.login = true;
             console.log("Login successful"); 
             console.log(authData);
-            var id = authData.uid;  
+            $scope.uid = authData.uid;
             // gather Firebase information from user info 
             // load up news feed information with major, name, university
             
-            peopleFirebase.child('/' + id).on('value', function(snapshot) {
+            peopleFirebase.child($scope.uid).on('value', function(snapshot) {
                 console.log(snapshot.val());
                 var userInformation = snapshot.val();
                 $scope.name = userInformation.name;
                 $scope.major = userInformation.major;
-                $scope.school = userInformation.uni;
+                $scope.school = userInformation.school;
             }, function(error) {
                 console.log("Error reading data");
             }); 
