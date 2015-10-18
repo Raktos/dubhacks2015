@@ -34,7 +34,7 @@ app.service('userInformation', function() {
 
 
 
-app.controller("LoginController", function ($scope, $location, userInformation) {
+app.controller("LoginController", ['$scope', '$location', '$timeout', function ($scope, $location, $timeout,userInformation) {
     var fireBase = new Firebase('https://uni-app.firebaseio.com');
     var peopleFirebase = new Firebase('https://uni-app.firebaseio.com/people');
     var schoolsFirebase = new Firebase('https://uni-app.firebaseio.com/schools');
@@ -117,12 +117,16 @@ app.controller("LoginController", function ($scope, $location, userInformation) 
             console.log("Login failed", error);
         } else {
             // $scope.login = true;
+            $timeout(function() {
+                $scope.currentPath = $location.path();
+            }, 0);
+            $location.path('/home');
             console.log("Login successful");
             console.log(authData);
 
             var id = authData.uid;
             userInformation.setUserId(id);
-            $location.path('/home');
+            
             /*
             // gather Firebase information from user info
             // load up news feed information with major, name, university
@@ -150,7 +154,7 @@ app.controller("LoginController", function ($scope, $location, userInformation) 
             });*/
         }
     }
-});
+}]);
 
 
 app.controller("NewsfeedController", function($scope, userInformation) {
