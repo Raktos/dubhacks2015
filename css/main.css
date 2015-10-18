@@ -243,6 +243,7 @@ div {
 
 .message-title {
     clear: both;
+    text-decoration: underline;
 }
 
 .message-body {
