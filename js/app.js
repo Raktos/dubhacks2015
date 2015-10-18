@@ -15,11 +15,12 @@ app.controller("MainCtrl", function($scope) {
     var personalMessageFirebase = new Firebase('https://uni-app.firebaseio.com/messages/personal');
 
     // raktos35@gmail.com
-    $scope.userEmail = "";
+    $scope.email = "";
     $scope.password = "";
     $scope.name = "";
     $scope.major = "";
     $scope.school = "";
+    $scope.year = "";
     $scope.login = false;
 
     // perform a get request to authenticate the user
@@ -27,7 +28,7 @@ app.controller("MainCtrl", function($scope) {
     // gathers all the user information 
     $scope.login = function() {
         fireBase.authWithPassword({
-            email : $scope.userEmail,
+            email : $scope.email,
             password : $scope.password
         }, authHandler);
     };
@@ -36,6 +37,26 @@ app.controller("MainCtrl", function($scope) {
         // var messageFirebase
     };
 
+    $scope.register = function() {
+        fireBase.createUser({
+            email : $scope.email,
+            password : $scope.password
+        }, function(error, userData) {
+            if(error) {
+                alert("user creation failed " + error);
+            } else {
+                populateNewUser(userData);
+            }
+        })
+    };
+
+    function populateNewUser(userData) {
+        peopleFirebase.child(userData.uid).child('firstName').set($scope.firstName);
+        peopleFirebase.child(userData.uid).child('lastName').set($scope.lastName);
+        peopleFirebase.child(userData.uid).child('school').set($scope.school);
+        peopleFirebase.child(userData.uid).child('year').set($scope.year);
+        $scope.login()
+    }
 
 
     
