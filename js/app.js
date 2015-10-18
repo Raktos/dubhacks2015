@@ -154,12 +154,10 @@ app.controller("NewsfeedController", function($scope, userInformation) {
 
     //initial get messages for group
     fireBase.child($scope.group + '/messages').on('value', function(snapshot) {
-        console.log(snapshot.val());
         for (var message in snapshot.val()) {
             $scope.messages.push(snapshot.val()[message]);
         }
-
-        console.log($scope.messages);
+        $scope.$apply()
     }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
     });
