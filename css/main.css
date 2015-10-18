@@ -176,10 +176,9 @@ div {
 
 .chatbar {
     width: 200px;
-    background-color: cornflowerblue;
     height: 100vh;
-    margin-top: 75px;
     float: right;
+    background-color :#F0F0F0 ;
 }
 
 .avatar {
@@ -226,8 +225,29 @@ div {
 
 .center h1 {
     padding-left: 1em;
-    color: green;
 }
+
+
+.groupName {
+    border-bottom: 1px solid black;
+    text-align : center;
+}
+
+#projectChat {
+    border-bottom : 1px solid black;
+    text-align : center;
+    background-color : #27900b;
+}
+
+#logo {
+    height : 90px;
+    margin-left : 15px;
+    margin-top : 5px;
+}
+
+
+
+
 
 .discussion-item {
     padding-bottom: 1em;
@@ -250,3 +270,4 @@ div {
     display: inline;
     padding-left: 1em;
 }
+
