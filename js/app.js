@@ -145,9 +145,30 @@ app.controller("LoginController", ['$scope', '$location', '$timeout', function (
 app.controller("NewsfeedController", function($scope, userInformation) {
     console.log(userInformation.getUserId());
     $scope.uid = userInformation.getUserId();
+    $scope.group = 'schools/University of Washington';
+    $scope.messages = [];
+
+    var fireBase = new Firebase('https://uni-app.firebaseio.com');
+    var peopleFirebase = new Firebase('https://uni-app.firebaseio.com/people');
+    var schoolsFirebase = new Firebase('https://uni-app.firebaseio.com/schools');
+
+    //initial get messages for group
+    fireBase.child($scope.group + '/messages').on('value', function(snapshot) {
+        console.log(snapshot.val());
+        for (var message in snapshot.val()) {
+            $scope.messages.push(snapshot.val()[message]);
+        }
+
+        console.log($scope.messages);
+    }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+    });
+
+    //asych update messages
+
 
     $scope.postMessage = function () {
-        // var messageFirebase
+        addMessage($scope.group, $scope.messageBody, $scope.uid)
     };
 
     function addMessage(target, body, uid) {
