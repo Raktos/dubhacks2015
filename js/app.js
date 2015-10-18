@@ -69,6 +69,14 @@ app.controller("MainCtrl", function($scope) {
         schoolsFirebase.child(school).child('students').push(uid);
         $scope.addMajor(school, 'general', year, uid);
     }
+
+    function addMessage(target, body, uid) {
+        fireBase.child(target + '/messages').push({uid : uid, body : body});
+    }
+
+    function createMessageGroup(participants) {
+        //work in progress...
+    }
     
     // needs to load up the news feed data
     // group list data 
