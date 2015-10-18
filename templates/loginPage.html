@@ -1,94 +1,94 @@
 <div>
-<div id="unibar" class="banner">
-    <h1 id="Uni-logo">Uni</h1>
-    <div class="login-block">
-        <label class="login-element" id="usernameLabel"> E-mail/Login: </label>
-        <input type="text" value="" ng-model="email" placeholder="Username" id="username" class="login-element" />
-        <label class="login-element" id="passwordLabel"> Password: </label>
-        <input type="password" value="" ng-model="password" placeholder="password" id="password" class="login-element" />
-        <button class="login-element" id="loginButton" ng-click="login()">Login</button>
-        <div class="subtitles">
-            <input type="checkbox"><label id="remember"> Remember me</label>
-            <a href="" id="forgotPassword">Forgot your password?</a>
-        </div>
-    </div>
-</div>
-
-<div class="background">
-
-    <div class="sign-up">
-        <div id="login">
-            <div class="login-form">
-
-            </div>
-            <div class="createUni">Create a Uni Account</div>
-            <div class="registration-form">
-                <form name="registration" ng-submit="register()">
-                    <div class="form-group", id="nameBlock">
-                        <label id="FirstNameBox" for="firstName" class="col-sm-2 control-label"></label>
-                        <div class="col-sm-5">
-                            <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name" autofocus ng-model="firstName">
-                        </div>
-                        <div class="col-sm-5">
-                            <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name" ng-model="lastName" ng-model="lastName">
-                        </div>
-                    </div>
-
-                    <div class="form-group" id="emailBlock">
-                        <label for="email" class="col-sm-2 control-label"></label>
-                        <div class="col-sm-10">
-                            <input type="email" name="email" id="email" class="form-control" placeholder="E-mail" ng-model="email">
-                        </div>
-                    </div>
-
-                    <div class="form-group" id="schoolBlock">
-                        <label for="school" class="col-sm-2 control-label"></label>
-                        <div class="col-sm-10">
-                            <input type="text" name="school" id="school" class="form-control" placeholder="School Name" ng-model="school">
-                        </div>
-                        <div class="col-sm-10">
-                            <input type="text" name="year" id="year" class="form-control" placeholder="Graduation Year" ng-model="year">
-                        </div>
-                    </div>
-
-                    <div class="form-group", id="passwordBlock">
-                        <label for="password" class="col-sm-2 control-label"></label>
-                        <div class="col-sm-5">
-                            <input type="password" name="password" id="password1" class="form-control" placeholder="Password" ng-model="password">
-                        </div>
-                        <div class="col-sm-5">
-                            <input type="password" name="passwordReEnter" id="password1reenter" class="form-control" placeholder="Re-enter Password">
-                        </div>
-                    </div>
-                </form>
-
+    <div id="unibar" class="banner">
+        <h1 id="Uni-logo">Uni</h1>
+        <div class="login-block">
+            <label class="login-element" id="usernameLabel"> E-mail/Login: </label>
+            <input type="text" value="" ng-model="email" placeholder="Username" id="username" class="login-element" />
+            <label class="login-element" id="passwordLabel"> Password: </label>
+            <input type="password" value="" ng-model="password" placeholder="password" id="password" class="login-element" />
+            <button class="login-element" id="loginButton" ng-click="login()">Login</button>
+            <div class="subtitles">
+                <input type="checkbox"><label id="remember"> Remember me</label>
+                <a href="" id="forgotPassword">Forgot your password?</a>
             </div>
         </div>
-
-    </div>
-    <div class="form-group" id="signupButton">
-        <div class="col-sm-12 text-right">
-            <button type="submit" class="btn btn-primary" id="signupBtn" ng-click="register()">Sign Up!</button>
-        </div>
     </div>
 
-    <div id="home">
-        <div class="group-list">
+    <div class="background">
+
+        <div class="sign-up">
+            <div id="login">
+                <div class="login-form">
+
+                </div>
+                <div class="createUni">Create a Uni Account</div>
+                <div class="registration-form">
+                    <form name="registration" ng-submit="register()">
+                        <div class="form-group", id="nameBlock">
+                            <label id="FirstNameBox" for="firstName" class="col-sm-2 control-label"></label>
+                            <div class="col-sm-5">
+                                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name" autofocus ng-model="firstName">
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name" ng-model="lastName" ng-model="lastName">
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="emailBlock">
+                            <label for="email" class="col-sm-2 control-label"></label>
+                            <div class="col-sm-10">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="E-mail" ng-model="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="schoolBlock">
+                            <label for="school" class="col-sm-2 control-label"></label>
+                            <div class="col-sm-10">
+                                <input type="text" name="school" id="school" class="form-control" placeholder="School Name" ng-model="school">
+                            </div>
+                            <div class="col-sm-10">
+                                <input type="text" name="year" id="year" class="form-control" placeholder="Graduation Year" ng-model="year">
+                            </div>
+                        </div>
+
+                        <div class="form-group", id="passwordBlock">
+                            <label for="password" class="col-sm-2 control-label"></label>
+                            <div class="col-sm-5">
+                                <input type="password" name="password" id="password1" class="form-control" placeholder="Password" ng-model="password">
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="password" name="passwordReEnter" id="password1reenter" class="form-control" placeholder="Re-enter Password">
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
 
         </div>
-        <div class="news-feed">
-            <h1 ng-model="name">{{ name }}</h1>
-            <h1 ng-model="major"> {{ major }} </h1>
-            <h1 ng-model="school"> {{ school }} </h1>
+        <div class="form-group" id="signupButton">
+            <div class="col-sm-12 text-right">
+                <button type="submit" class="btn btn-primary" id="signupBtn" ng-submit="register()">Sign Up!</button>
+            </div>
         </div>
-        <div class="conversation">
 
+        <div id="home">
+            <div class="group-list">
+
+            </div>
+            <div class="news-feed">
+                <h1 ng-model="name">{{ name }}</h1>
+                <h1 ng-model="major"> {{ major }} </h1>
+                <h1 ng-model="school"> {{ school }} </h1>
+            </div>
+            <div class="conversation">
+
+            </div>
+        </div>
+        <div id="group">
+            <div id="post-form">
+
+            </div>
         </div>
     </div>
-    <div id="group">
-        <div id="post-form">
-
-        </div>
-    </div>
-</div>
 </div>

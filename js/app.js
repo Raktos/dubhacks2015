@@ -60,10 +60,6 @@ app.controller("LoginController", ['$scope', '$location', '$timeout', function (
         }, authHandler);
     };
 
-    $scope.postMessage = function () {
-        // var messageFirebase
-    };
-
     $scope.register = function () {
         fireBase.createUser({
             email: $scope.email,
@@ -97,17 +93,6 @@ app.controller("LoginController", ['$scope', '$location', '$timeout', function (
         $scope.addMajor(school, 'general', year, uid);
     }
 
-
-
-    function addMessage(target, body, uid) {
-        fireBase.child(target + '/messages').push({uid : uid, body : body});
-    }
-
-    function createMessageGroup(participants) {
-        //work in progress...
-    }
-    
-
     // needs to load up the news feed data
     // load up a new page with the news feed information
     // group list data
@@ -132,24 +117,24 @@ app.controller("LoginController", ['$scope', '$location', '$timeout', function (
             // load up news feed information with major, name, university
 
             peopleFirebase.child('/' + id).on('value', function (snapshot) {
-=======
+
             $scope.uid = authData.uid;
             // gather Firebase information from user info 
             // load up news feed information with major, name, university
             
             peopleFirebase.child($scope.uid).on('value', function(snapshot) {
->>>>>>> master
+
                 console.log(snapshot.val());
                 var userInformation = snapshot.val();
                 $scope.name = userInformation.name;
                 $scope.major = userInformation.major;
-<<<<<<< HEAD
+
                 $scope.school = userInformation.uni;
             }, function (error) {
-=======
+
                 $scope.school = userInformation.school;
             }, function(error) {
->>>>>>> master
+
                 console.log("Error reading data");
             });*/
         }
@@ -159,7 +144,19 @@ app.controller("LoginController", ['$scope', '$location', '$timeout', function (
 
 app.controller("NewsfeedController", function($scope, userInformation) {
     console.log(userInformation.getUserId());
-    $scope.user = userInformation.getUserId();
+    $scope.uid = userInformation.getUserId();
+
+    $scope.postMessage = function () {
+        // var messageFirebase
+    };
+
+    function addMessage(target, body, uid) {
+        fireBase.child(target + '/messages').push({uid : uid, body : body});
+    }
+
+    function createMessageGroup(participants) {
+        //work in progress...
+    }
 });
 
 
