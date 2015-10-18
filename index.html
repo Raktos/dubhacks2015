@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
     <title></title>
 </head>
 <body ng-app="uniApp">
     <div class="main-container" ng-controller="MainCtrl">
         <div id="home">
             <div class="profile">
-                <input type="email" ng-model="email">
+                <input type="test" ng-model="userEmail">
                 <input type="password" ng-model="password">
-                <button type="submit" ng-click="login()"> </button>
+                <button type="submit" ng-click="login()"> Login </button>
             </div>
             <div class="group-list">
-
+                
             </div>
             <div class="news-feed">
-
+                <h1 ng-model="name">{{ name }}</h1>
+                <h1 ng-model="major"> {{ major }} </h1>
+                <h1 ng-model="school"> {{ school }} </h1>
             </div>
             <div class="conversation">
 
