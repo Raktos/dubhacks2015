@@ -6,12 +6,85 @@
     width: 100%;
 }
 
+.login-element {
+    margin-top : 15px;
+    margin-left : 10px;
+
+}
+
+.login-block {
+    margin-right: 50px;
+}
+
+#password, #username {
+    height: 25px;
+    width : 185px;
+    margin-top: 10px;
+}
+
+#usernameLabel, #passwordLabel {
+    font-size : 17px;
+    color : white;
+}
+
+#loginButton {
+    width : 100px;
+    height: 35px;
+    background-color : #014421;
+    opacity : 0.7;
+    font-size: 16px;
+    color : white;
+}
+
+#forgotPassword {
+    margin-left : 190px;
+}
+
+
+
+.subtitles {
+    font-size: 10px;
+    margin-left : 118px;
+    color : white;
+}
+
 #Uni-logo {
     color: white;
+    filter: alpha(opacity=100);
     float: left;
     font-size: 50px;
-    margin-top: 0em;
+    margin-top: 10px;
+    margin-left: 30px;
 }
+
+#firstName, #lastName, #school, #year, #password1, #password1reenter {
+    font-size: 18px;
+    width: 220px;
+    height: 30px;
+}
+
+#nameBlock, #schoolBlock, #emailBlock, #passwordBlock {
+    height: 45px;
+}
+
+#firstName, #school, #password1 {
+    margin-left: 20px;
+    float: left;
+}
+
+#lastName, #year, #password1reenter {
+    float: right;
+    margin-right: 20px;
+}
+
+#email {
+    width: 455px;
+    font-size: 18px;
+    margin-left: 20px;
+    height: 30px;
+}
+
+
 .background {
     background: url('../img/bg.png') no-repeat fixed center center;
     background-size: cover;
@@ -22,15 +95,52 @@
     left: 0px;
 }
 
-#sign-Up {
-    width: 800px;
-    height: 400px;
-    background: white;
-    opacity: 0.3;
-    border:1px solid black;
+.sign-up {
+    width: 500px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 175px;
+}
 
+#signupButton {
+    text-align: center;
+    padding-top: 10px;
+}
+
+#signupBtn{
+    background: #27900b;
+    background-image: -webkit-linear-gradient(top, #27900b, #27900b);
+    background-image: -moz-linear-gradient(top, #27900b, #27900b);
+    background-image: -ms-linear-gradient(top, #27900b, #27900b);
+    background-image: -o-linear-gradient(top, #27900b, #27900b);
+    background-image: linear-gradient(to bottom, #27900b, #27900b);
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    width: 500px;
+}
+
+#signupBtn:hover {
+    background: #2f8032;
+    text-decoration: none;
+}
+
+
+.createUni {
+    text-align: center;
+    height: 45px;
+    padding-top: 15px;
+    color: white;
+    font-size: 30px;
+    opacity: 1;
     margin: 0 auto;
-    margin-top: 100px;
 }
 
 .login-block {

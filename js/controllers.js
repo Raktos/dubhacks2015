@@ -1,40 +1,9 @@
 /**
- * Created by Raktos on 10/17/2015.
+ * Created by georgeyu on 10/18/15.
  */
+var app = angular.module('controllers', []);
 
-var app = angular.module('uniApp', ['ngRoute']);
-
-app.config(['$routeProvider',
-    function ($routeProvider) {
-        $routeProvider
-            .when('/home', {
-                templateUrl:'./templates/newsfeedPage.html',
-                controller:"NewsfeedController"
-            })
-            .when('/', {
-            templateUrl: './templates/loginPage.html',
-            controller: "LoginController"
-    });
-}]);
-
-app.service('userInformation', function() {
-   var userId = '';
-   var setUserId = function(id) {
-       userId = id;
-   };
-   var getUserId = function() {
-       return userId;
-   };
-
-   return {
-     setUserId : setUserId,
-     getUserId : getUserId
-   };
-});
-
-
-
-app.controller("LoginController", function ($scope, $location, userInformation) {
+app.controller("LoginController", ['$scope', function($scope) {
     var fireBase = new Firebase('https://uni-app.firebaseio.com');
     var peopleFirebase = new Firebase('https://uni-app.firebaseio.com/people');
     var originalPostFirebase = new Firebase('https://uni-app.firebaseio.com/messages/group/originalPost');
@@ -53,23 +22,23 @@ app.controller("LoginController", function ($scope, $location, userInformation) 
     // perform a get request to authenticate the user
     // will make a get request to using the userEmail and the password
     // gathers all the user information
-    $scope.login = function () {
+    $scope.login = function() {
         fireBase.authWithPassword({
-            email: $scope.email,
-            password: $scope.password
+            email : $scope.email,
+            password : $scope.password
         }, authHandler);
     };
 
-    $scope.postMessage = function () {
+    $scope.postMessage = function() {
         // var messageFirebase
     };
 
-    $scope.register = function () {
+    $scope.register = function() {
         fireBase.createUser({
-            email: $scope.email,
-            password: $scope.password
-        }, function (error, userData) {
-            if (error) {
+            email : $scope.email,
+            password : $scope.password
+        }, function(error, userData) {
+            if(error) {
                 alert("user creation failed " + error);
             } else {
                 populateNewUser(userData);
@@ -86,6 +55,7 @@ app.controller("LoginController", function ($scope, $location, userInformation) 
     }
 
 
+
     // needs to load up the news feed data
     // load up a new page with the news feed information
     // group list data
@@ -94,71 +64,25 @@ app.controller("LoginController", function ($scope, $location, userInformation) 
             alert("Login failed!");
             console.log("Login failed", error);
         } else {
-            // $scope.login = true;
+            $scope.login = true;
             console.log("Login successful");
             console.log(authData);
             var id = authData.uid;
-            userInformation.setUserId(id);
-            $location.path('/home');
-            /*
+
             // gather Firebase information from user info
             // load up news feed information with major, name, university
 
-            peopleFirebase.child('/' + id).on('value', function (snapshot) {
+            peopleFirebase.child('/' + id).on('value', function(snapshot) {
                 console.log(snapshot.val());
                 var userInformation = snapshot.val();
                 $scope.name = userInformation.name;
                 $scope.major = userInformation.major;
                 $scope.school = userInformation.uni;
-            }, function (error) {
+            }, function(error) {
                 console.log("Error reading data");
-            });*/
+            });
         }
     }
-});
 
 
-app.controller("NewsfeedController", function($scope, userInformation) {
-    console.log(userInformation.getUserId());
-    $scope.user = userInformation.getUserId();
-});
-
-
-/*
-People list:
-major
-name
-university 
-graduation year
-list of classes 
-classes
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}]);
