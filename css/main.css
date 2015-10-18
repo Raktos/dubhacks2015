@@ -40,8 +40,6 @@
     margin-left : 190px;
 }
 
-
-
 .subtitles {
     font-size: 10px;
     margin-left : 118px;
@@ -83,7 +81,6 @@
     margin-left: 20px;
     height: 30px;
 }
-
 
 .background {
     background: url('../img/bg.png') no-repeat fixed center center;
@@ -132,7 +129,6 @@
     text-decoration: none;
 }
 
-
 .createUni {
     text-align: center;
     height: 45px;
@@ -155,7 +151,6 @@ div {
     display: block;
 }
 
-
 .logo {
     width: 213px;
     height: 36px;
@@ -163,3 +158,28 @@ div {
     margin: 30px auto;
 }
 
+.left-bar {
+    border-right-color: black;
+    float: left;
+    width: 250px;
+    height: 100vh;
+    margin-top: 75px;
+    background-color: lightgray;
+    background-color: rgba(216, 216, 216, 0.5);
+
+}
+
+.newsfeedbody {
+    margin-left: 250px;
+    height: 100vh;
+    background-color: lightpink;
+    width: 800px;
+}
+
+.chatbar {
+    width: 200px;
+    background-color: cornflowerblue;
+    height: 100vh;
+    margin-top: 75px;
+    float: right;
+}

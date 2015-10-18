@@ -60,10 +60,6 @@ app.controller("LoginController", function ($scope, $location, userInformation) 
         }, authHandler);
     };
 
-    $scope.postMessage = function () {
-        // var messageFirebase
-    };
-
     $scope.register = function () {
         fireBase.createUser({
             email: $scope.email,
@@ -96,17 +92,6 @@ app.controller("LoginController", function ($scope, $location, userInformation) 
         schoolsFirebase.child(school).child('students').push(uid);
         $scope.addMajor(school, 'general', year, uid);
     }
-
-
-
-    function addMessage(target, body, uid) {
-        fireBase.child(target + '/messages').push({uid : uid, body : body});
-    }
-
-    function createMessageGroup(participants) {
-        //work in progress...
-    }
-    
 
     // needs to load up the news feed data
     // load up a new page with the news feed information
@@ -155,7 +140,19 @@ app.controller("LoginController", function ($scope, $location, userInformation) 
 
 app.controller("NewsfeedController", function($scope, userInformation) {
     console.log(userInformation.getUserId());
-    $scope.user = userInformation.getUserId();
+    $scope.uid = userInformation.getUserId();
+
+    $scope.postMessage = function () {
+        // var messageFirebase
+    };
+
+    function addMessage(target, body, uid) {
+        fireBase.child(target + '/messages').push({uid : uid, body : body});
+    }
+
+    function createMessageGroup(participants) {
+        //work in progress...
+    }
 });
 
 
