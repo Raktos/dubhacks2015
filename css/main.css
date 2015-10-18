@@ -1,7 +1,6 @@
 #unibar {
     background-color: #27900b;
     height: 100px;
-    position: absolute;
     width: 100%;
     left: 0px;
 }
@@ -192,4 +191,41 @@ div {
 .headshot {
 
     border-radius: 25px;
+}
+
+.part {
+}
+
+.upcoming {
+    oveflow: hidden;
+}
+
+.upcoming h1{
+    color: green;
+}
+
+.homework-item, .test-item {
+    border-bottom: solid 2px lightgray;
+}
+
+.homework-item img {
+    float: left;
+}
+
+.homework h2, .tests h2 {
+    background-color: green;
+    color: white;
+}
+
+.homework, .tests {
+    float: left;
+    margin: auto;
+}
+
+.discussions {
+    clear: both;
+}
+
+.center h1 {
+    padding-left: 1em;
 }
