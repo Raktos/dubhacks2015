@@ -4,5 +4,12 @@
 var app = angular.module('uniApp', []);
 
 app.controller("MainCtrl", function($scope) {
+    $scope.email;
+    $scope.password;
 
+
+    // perform a get request to authenticate the user 
+    $scope.login = function() {
+
+    }
 });

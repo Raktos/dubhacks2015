@@ -1,0 +1,31 @@
+{
+	"people" : {
+		"65bee663-8606-4fa8-9d78-79ddd3b1f7a8": {
+			"uni" : "University of Washington",
+			"name" : "Jason Ho",
+			"major" : "Informatics",
+			"year" : 2016,
+			"classes" : ["class1", "class2"]
+		},
+		"3d92b402-2dbf-4631-b30b-d73c83025cbc": {
+			"uni" : "University of Washington",
+			"name" : "George Yu",
+			"major" : "Informatics",
+			"year" : 2016,
+			"classes" : ["class1", "class2, class3"]
+		}
+	},
+	"messages" : {
+		"personal" : {
+			"id" : "vdsvs"
+		},
+		"group" : {
+			"originalPost" : {
+				"id" : "dsafdgdf"
+			},
+			"replyPost" : {
+				"id" : "fdsjkfre"
+			}
+		}
+	}
+}
